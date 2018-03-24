@@ -12,10 +12,6 @@ class App extends Component {
             listOfPlaces: [],
             //this is an array of objects, each object has information on each restaurant
 
-            specificPlace: {},
-            //when a user clicks on a restaurant, the placeId will go to the api and that info will
-            //go to this object to be displayed in a modal
-
             homeActive: true,
             // if this is true, then homepage will be displayed, otherwise list page will be displayed
 
@@ -27,6 +23,7 @@ class App extends Component {
         this.getCity = this.getCity.bind(this);
         this.getState = this.getState.bind(this);
         this.check = this.check.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     getCity = (event) => {
@@ -41,10 +38,19 @@ class App extends Component {
 
     toggle = () => {
         this.setState({homeActive: !this.state.homeActive});
+        this.reset();
+    };
+
+    reset = () => {
+        this.setState({
+            city: "",
+            state: "",
+            latitude: 0,
+            longitude: 0
+        });
     };
 
     check = () => {
-        alert(`${this.state.city} and ${this.state.state}`);
         //https://maps.googleapis.com/maps/api/geocode/json?address=CITY-STATE&sensor=false&key=AIzaSyDk4gQHXv9-KIilVjJ7Lggg8pqIwVRAHJw
         let city = this.state.city;
         let state = this.state.state;
@@ -79,10 +85,14 @@ class App extends Component {
                                         getCity={this.getCity}
                                         state={this.state.state}
                                         getState={this.getState}
-                                        check={this.check}/>}
+                                        check={this.check}
+                                       />}
             {/*if homeActive is true, display Homepage component*/}
 
-            {!this.state.homeActive && <List />}
+            {!this.state.homeActive && <List
+                                           list={this.state.listOfPlaces}
+                                           toggle={this.toggle}
+                                        />}
             {/*If homeActive is false, display List component*/}
       </div>
     );

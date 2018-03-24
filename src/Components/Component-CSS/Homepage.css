@@ -1,6 +1,9 @@
 #homepage{
-    margin-left: 30%;
-    margin-top: 30%;
+    height: 500px;
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #homepage-form-input{
