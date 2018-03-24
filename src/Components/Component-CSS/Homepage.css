@@ -1,0 +1,15 @@
+#homepage{
+    margin-left: 30%;
+    margin-top: 30%;
+}
+
+#homepage-form-input{
+    border-radius: 10px;
+    text-align: center;
+}
+#homepage-form-input:focus {outline:0;}
+
+button{
+    border: none;
+    border-radius: 5px;
+}
