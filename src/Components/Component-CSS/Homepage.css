@@ -1,18 +1,52 @@
+body, html {
+	height: 100%; 
+    background-size: cover;
+    background: linear-gradient(
+    to bottom, 
+    #ff9e2c 0%, 
+    #ff9e2c 50%, 
+    #b6701e 50%, 
+    #b6701e 100% 
+  );}
+
 #homepage{
-    height: 500px;
-    padding-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      min-height: 100%; 
+	  position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -105px;
+}
+
+#homepage h1{
+	text-align: center;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
 }
 
 #homepage-form-input{
     border-radius: 10px;
     text-align: center;
+    font-family: "Courier New", Courier, monospace;
 }
 #homepage-form-input:focus {outline:0;}
+
+#homepage-form-input:hover {border-color: gray;}
 
 button{
     border: none;
     border-radius: 5px;
+    width: 65px;
+    text-align: center;
+    margin-left: 37%;
+    cursor: pointer;
+}
+
+button:hover{
+	background-color: gray;
+}
+@media only screen and (max-width: 585px) {
+    button {
+        margin-left: 0;
+    }
 }

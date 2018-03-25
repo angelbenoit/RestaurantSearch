@@ -1,0 +1,19 @@
+#listPage{
+	background-color: silver;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.item{
+	border: 5px solid gray;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+.item:hover{
+	background-color: #3E3E3E;
+	color: white;
+	cursor: pointer;
+}

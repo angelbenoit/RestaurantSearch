@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import ModalComponent from './ModalComponent';
+import './Component-CSS/List.css'
 
 class List extends Component{
     constructor(props){
@@ -15,6 +15,7 @@ class List extends Component{
         };
 
         this.displayList = this.displayList.bind(this);
+        this.renderModal = this.renderModal.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -31,7 +32,7 @@ class List extends Component{
         let displayArray = [];
         this.props.list.forEach((item, index) => {
             displayArray.push(
-                <div key={index} onClick={() => this.renderModal(item.place_id)}>
+                <div className="item" key={index} onClick={() => this.renderModal(item.place_id)}>
                     <h1>{item.name}</h1>
                     <p>Rating: {item.rating}</p>
                     <p>Address: {item.vicinity}</p>
@@ -42,7 +43,7 @@ class List extends Component{
     };
 
     renderModal = (id) => {
-        let url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=AIzaSyBCU4IDU4yztAJarEW4YxUwpIRPsqSSxI4`;
+        let url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}&key=AIzaSyBCU4IDU4yztAJarEW4YxUwpIRPsqSSxI4&language=en`;
         console.log(url);
         fetch(url)
             .then((response) => response.json())
@@ -50,23 +51,24 @@ class List extends Component{
                 this.setState({specificPlace: data})
             })
             .then(this.openModal);
-        console.log(this.state.specificPlace.result);
     };
+
 
     render(){
         let list = this.displayList();
+        let data;
+        if(this.state.specificPlace){
+            data = this.state.specificPlace.result;
+        }
         return (
-            <div>
+            <div id="listPage">
                 <button onClick={this.props.toggle}>← Back</button>
                 {list}
-                <Modal
+                <ModalComponent
                     isOpen={this.state.modalIsOpen}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Example Modal"
-                >
-
-                    <button onClick={this.closeModal}>close</button>
-                </Modal>
+                    isClosed={this.closeModal}
+                    data={data ? data : "NO DATA"}
+                />
             </div>
         )
     }
