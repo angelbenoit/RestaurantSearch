@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5e883b6-1672-42e2-961c-fd80c15c2326" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/Homepage.js" afterPath="$PROJECT_DIR$/src/Components/Homepage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/ModalComponent.js" afterPath="$PROJECT_DIR$/src/Components/ModalComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
-    </list>
+    <list default="true" id="f5e883b6-1672-42e2-961c-fd80c15c2326" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -183,12 +176,12 @@
       <workItem from="1521917356845" duration="2800000" />
       <workItem from="1521920480993" duration="1049000" />
       <workItem from="1522026103985" duration="3387000" />
-      <workItem from="1522089053238" duration="2993000" />
+      <workItem from="1522089053238" duration="3060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32578000" />
+    <option name="totallyTimeSpent" value="32645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="758" y="0" width="1162" height="1040" extended-state="0" />
@@ -587,6 +580,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
