@@ -18,30 +18,38 @@ hr{
       min-height: 100%; 
 	  position: fixed;
       top: 50%;
-      left: 50%;
+      left: 40%;
       margin-top: -50px;
       margin-left: -105px;
 }
 
 #homepage form{
     position: fixed;
-    left: 50%;
+    left: 40%;
 }
 
 #homepage h1{
 	text-align: center;
 	font-weight: bold;
+    color: white;
 	font-family: "Courier New", Courier, monospace;
 }
 
 #homepage-form-input{
-    border-radius: 10px;
     text-align: center;
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    outline: none;
     font-family: "Courier New", Courier, monospace;
 }
-#homepage-form-input:focus {outline:0;}
 
-#homepage-form-input:hover {border-color: gray;}
+::placeholder{
+  color: white;
+}
+#homepage-form-input:focus {outline:0;}
 
 button{
     border: none;
@@ -50,6 +58,14 @@ button{
     text-align: center;
     margin-left: 37%;
     cursor: pointer;
+    background-color: #C3BE14;
+    color: white;
+}
+
+button:disabled {
+    background: #746D2D;
+    color: white;
+    cursor: not-allowed;
 }
 
 button:hover{
@@ -58,13 +74,13 @@ button:hover{
 @media only screen and (max-width: 500px) {
     #homepage{
         position: fixed;
-        left: 25%;
+        left: 30%;
     }
     #homepage form{
         position: fixed;
         left: 25%;
     }
     hr{
-        width: 70%;
+        width: 95%;
     }
 }
