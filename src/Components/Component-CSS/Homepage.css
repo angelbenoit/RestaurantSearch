@@ -2,12 +2,17 @@ body, html {
 	height: 100%; 
     background-size: cover;
     background: linear-gradient(
-    to bottom, 
-    #ff9e2c 0%, 
-    #ff9e2c 50%, 
-    #b6701e 50%, 
-    #b6701e 100% 
-  );}
+    to right,
+    #4f4e1d,
+    #6a632b,
+    #aca63b,
+    #c7c30d
+  );
+}
+
+hr{
+    background-color: white;
+}
 
 #homepage{
       min-height: 100%; 
@@ -16,6 +21,11 @@ body, html {
       left: 50%;
       margin-top: -50px;
       margin-left: -105px;
+}
+
+#homepage form{
+    position: fixed;
+    left: 50%;
 }
 
 #homepage h1{
@@ -45,8 +55,16 @@ button{
 button:hover{
 	background-color: gray;
 }
-@media only screen and (max-width: 585px) {
-    button {
-        margin-left: 0;
+@media only screen and (max-width: 500px) {
+    #homepage{
+        position: fixed;
+        left: 25%;
+    }
+    #homepage form{
+        position: fixed;
+        left: 25%;
+    }
+    hr{
+        width: 70%;
     }
 }

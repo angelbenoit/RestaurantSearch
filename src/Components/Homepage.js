@@ -6,6 +6,7 @@ class Homepage extends Component{
         return (
             <div id="homepage">
                 <h1>Restaurant Search</h1>
+                <hr/>
                 <form>
                     <input id="homepage-form-input"
                            value={this.props.city}
@@ -13,15 +14,17 @@ class Homepage extends Component{
                            required
                            placeholder="City"
                            onChange={this.props.getCity}/>
-
+                    <br/><br/>
                     <input id="homepage-form-input"
                            value={this.props.state}
                            type="text"
                            required
                            placeholder="State"
                            onChange={this.props.getState}/>
-
-                    <button onClick={this.props.check}>Go</button>
+                    <br/><br/>
+                    {/*if the length of city and state is 0, then the button will be disabled*/}
+                    <button disabled={!(this.props.city.length > 0 && this.props.state.length > 0)}
+                            onClick={this.props.check}>Go</button>
                 </form>
             </div>
         )
