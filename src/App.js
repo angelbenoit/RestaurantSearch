@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import Homepage from './Components/Homepage';
 import List from './Components/List';
 
@@ -16,11 +17,13 @@ class App extends Component {
 
             city: "",
             state: "",
+            radius: "",
             latitude: 0,
             longitude: 0
         };
         this.getCity = this.getCity.bind(this);
         this.getState = this.getState.bind(this);
+        this.getRadius = this.getRadius.bind(this);
         this.check = this.check.bind(this);
         this.reset = this.reset.bind(this);
     }
@@ -33,6 +36,11 @@ class App extends Component {
     getState = (event) => {
         event.preventDefault();
         this.setState({state: event.target.value});
+    };
+
+    getRadius = (event) => {
+        event.preventDefault();
+        this.setState({radius: event.target.value});
     };
 
     toggle = () => {
@@ -67,7 +75,8 @@ class App extends Component {
     };
 
     getList = () => {
-        let url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBCU4IDU4yztAJarEW4YxUwpIRPsqSSxI4&location=${this.state.latitude},${this.state.longitude}&radius=2000&type=restaurant`;
+        let radius = (Number(this.state.radius) * 1609.344);
+        let url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBCU4IDU4yztAJarEW4YxUwpIRPsqSSxI4&location=${this.state.latitude},${this.state.longitude}&radius=${radius}&type=restaurant`;
         console.log(url);
         fetch(url)
             .then((response) => response.json())
@@ -86,7 +95,10 @@ class App extends Component {
                                         getCity={this.getCity}
                                         state={this.state.state}
                                         getState={this.getState}
+                                        radius={this.state.radius}
+                                        getRadius={this.getRadius}
                                         check={this.check}
+                                        reset={this.reset}
                                        />}
             {/*if homeActive is true, display Homepage component*/}
 

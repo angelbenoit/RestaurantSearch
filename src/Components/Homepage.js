@@ -5,6 +5,7 @@ class Homepage extends Component{
     render(){
         return (
                 <div id="homepage">
+                    {this.props.reset}
                     <h1>Restaurant Search</h1>
                     <hr/>
                     <form>
@@ -22,8 +23,16 @@ class Homepage extends Component{
                                placeholder="State"
                                onChange={this.props.getState}/>
                         <br/><br/>
+                        <input id="homepage-form-input"
+                               value={this.props.radius}
+                               type="text"
+                               required
+                               placeholder="Radius"
+                               onChange={this.props.getRadius}/>
+                        <br/><br/>
                         {/*if the length of city and state is 0, then the button will be disabled*/}
-                                <button disabled={!(this.props.city.length > 0 && this.props.state.length > 0)}
+                                <button disabled={!((this.props.city.length > 0 && this.props.state.length > 0)
+                                                    && (this.props.radius > 0))}
                                         onClick={this.props.check}
                                 >
                                         Go
